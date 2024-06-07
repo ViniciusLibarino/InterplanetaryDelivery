@@ -1,7 +1,7 @@
 import React from 'react';
 import {Alert, Text, TouchableOpacity, View} from 'react-native';
 import FAIcon from 'react-native-vector-icons/FontAwesome5';
-import {useAddressStore} from '../../service/addressContext';
+import {useAddressStore} from '../../service/addressStore';
 import {styles} from './styles';
 
 type DataProps = {

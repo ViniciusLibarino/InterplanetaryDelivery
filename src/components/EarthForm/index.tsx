@@ -3,14 +3,14 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {useForm} from 'react-hook-form';
 import {ScrollView, View} from 'react-native';
-import {useAddressStore} from '../../service/addressContext';
+import {useAddressStore} from '../../service/addressStore';
 import {ButtonAddAddress} from '../ButtonAddAddress';
 import {FormTextInput} from '../FormTextInput';
 import {EarthFormSchema, earthFormSchema} from './earthFormSchema';
 import {styles} from './styles';
 
 export function EarthForm() {
-  const addressStore = useAddressStore();
+  const {addNewAddress} = useAddressStore();
   const navigation = useNavigation();
 
   const {control, formState, handleSubmit} = useForm<EarthFormSchema>({
@@ -32,7 +32,7 @@ export function EarthForm() {
 
   const onSubmit = (data: EarthFormSchema) => {
     console.log('data', data);
-    addressStore.addAddress({
+    addNewAddress({
       title: data.addressName,
       planet: 'earth',
       address: `${data.addressStreet}, ${data.addressNumber} - ${data.addressComplement} - ${data.addressCity} - ${data.addressState}`,

@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, StatusBar, View} from 'react-native';
 import {Header} from '../../components/Header';
 import {ListComponent} from '../../components/ListComponent';
-import {useAddressStore} from '../../service/addressContext';
+import {useAddressStore} from '../../service/addressStore';
 import {styles} from './styles';
 
 export type AddressProps = {
