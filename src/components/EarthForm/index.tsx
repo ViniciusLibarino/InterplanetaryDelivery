@@ -31,7 +31,6 @@ export function EarthForm() {
   });
 
   const onSubmit = (data: EarthFormSchema) => {
-    console.log('data', data);
     addNewAddress({
       title: data.addressName,
       planet: 'earth',

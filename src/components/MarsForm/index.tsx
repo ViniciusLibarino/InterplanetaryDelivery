@@ -24,7 +24,6 @@ export function MarsForm() {
   });
 
   const onSubmit = (data: MarsFormSchema) => {
-    console.log('data', data);
     addNewAddress({
       title: data.addressName,
       planet: 'mars',
